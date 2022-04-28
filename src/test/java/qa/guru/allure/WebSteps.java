@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-public class WebSteps {
+public class WebSteps extends Selector {
 
     @Step("Откр глав стр ")
     public void openMainPage() {
@@ -21,25 +21,23 @@ public class WebSteps {
     }
     @Step("Ищем репозиторий {repo} ")
     public void searchForRepository(String repo) {
-        $(".header-search-wrapper").click();
-        $(".header-search-wrapper").sendKeys(repo);
-        $(".header-search-wrapper").submit();
+        search.click();
+        search.sendKeys(repo);
+        search.submit();
     }
-    @Step(" ПЕреходим по ссылке репозитория {repo}")
+    @Step("Переходим по ссылке репозитория {repo}")
     public void clickOnRepositoryLink(String repo) {
         $(linkText(repo)).click();
     }
     @Step("Кликаем на таб Issues {repo}")
     public void openIssuesTab() {
         $(partialLinkText("Issues")).click();
-
     }
-    @Step("Проверяем, что существует Issues с номером {number} ")
-    public void shouldSeeIssueWithNumber(int number){
-        $(withText("#" + number)).should(Condition.visible);
+    @Step("Проверяем, что существует Issues с темой {name} ")
+    public void shouldSeeIssueWithName(String name){
+        $(withText(name)).should(Condition.visible);
         attachScreenShot();
     }
-
 
     @Attachment(value = "Мой люб скриншот", type = "image/png", fileExtension = "png")
 public byte[] attachScreenShot (){

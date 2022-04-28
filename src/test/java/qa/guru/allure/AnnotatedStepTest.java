@@ -14,8 +14,8 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class AnnotatedStepTest {
 
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final int ISSUES_NUMBER = 68;
+    private static final String REPOSITORY = "ViktoriiaDymkova/Lesson_7_Allure-Reports";
+    private static final String ISSUES_NAME = "Issue for example";
 
     @Test
     public void testGithubIssue() {
@@ -27,7 +27,7 @@ public class AnnotatedStepTest {
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumber(ISSUES_NUMBER);
+        steps.shouldSeeIssueWithName(ISSUES_NAME);
 
 
 

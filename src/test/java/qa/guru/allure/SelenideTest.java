@@ -10,22 +10,19 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-public class SelenideTest {
+public class SelenideTest extends Selector {
     @Test
-    @DisplayName("Хороший тест")
+    @DisplayName("Первый тест")
     public void testGithubIssue(){
         SelenideLogger.addListener("allure",new AllureSelenide());
 
         open("https://github.com");
-        $(".header-search-wrapper").click();
-        $(".header-search-wrapper").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-wrapper").submit();
+        search.click();
+        search.sendKeys("ViktoriiaDymkova/Lesson_7_Allure-Reports");
+        search.submit();
 
-        $(linkText("eroshenkoam/allur-example")).click();
+        $(linkText("ViktoriiaDymkova/Lesson_7_Allure-Reports")).click();
         $(partialLinkText("Issues")).click();
-        $(withText("#76")).click();
-
-
-
+        $(withText("Issue for example")).click();
     }
 }
