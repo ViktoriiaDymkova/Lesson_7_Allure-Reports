@@ -22,7 +22,7 @@ public class WebSteps extends Selector {
     @Step("Ищем репозиторий {repo} ")
     public void searchForRepository(String repo) {
         search.click();
-        search.sendKeys(repo);
+        search.setValue(repo);
         search.submit();
     }
     @Step("Переходим по ссылке репозитория {repo}")

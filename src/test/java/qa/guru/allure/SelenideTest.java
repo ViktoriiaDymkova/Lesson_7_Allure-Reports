@@ -18,7 +18,7 @@ public class SelenideTest extends Selector {
 
         open("https://github.com");
         search.click();
-        search.sendKeys("ViktoriiaDymkova/Lesson_7_Allure-Reports");
+        search.setValue("ViktoriiaDymkova/Lesson_7_Allure-Reports");
         search.submit();
 
         $(linkText("ViktoriiaDymkova/Lesson_7_Allure-Reports")).click();

@@ -6,6 +6,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Selector {
 
-    public SelenideElement search =  $(".header-search-wrapper");
+    public SelenideElement search =  $(".header-search-input");
 
 }

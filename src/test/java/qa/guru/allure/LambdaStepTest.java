@@ -27,7 +27,7 @@ public class LambdaStepTest extends Selector {
         });
         step("Ищем репозиторий " + REPOSITORY, () -> {
             search.click();
-            search.sendKeys(REPOSITORY);
+            search.setValue(REPOSITORY);
             search.submit();
         });
         step(" Пeреходим по ссылке репозитория " + REPOSITORY, () -> {
